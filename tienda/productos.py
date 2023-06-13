@@ -74,8 +74,39 @@ class Productos:
     def setSalir(self, salir):
         self.salir = salir
 
-    def productos(self):
-        import menus
+class Productos:
+    import menus
+    def __init__(self):
+        self.compra_productos_b = []
+        self.compra_productos_c = []
+        self.compra_productos_ca = []
+        self.compra_productos_j = []
+        self.compra_productos_p = []
+        self.compra_productos_r = []
+        self.compra_productos_tra = []
+        self.compra_total = 0
+        self.salir = False
+
+    def set_opcion(self, opcion):
+        self.opcion = opcion
+
+    def menu_principal(self):
+        print(".......................................................................................................................")
+        print("::                                                         CATEGORIAS                                                ::")
+        print("::                                             COLECCION OTONIO - INVIERNO 2022                                        ::")
+        print("::...................................................................................................................::\n")
+
+        print("1.Remeras")
+        print("2.Buzos")
+        print("3.Camperas")
+        print("4.Jeans")
+        print("5.Pantalones Joggin")
+        print("6.Camisas")
+        print("7.Trajes")
+        print("8.Ver carrito de compras")
+        print("9.Salir de la cuenta\n")
+
+    def menu_compras(self):
         remeras = menus.MenuRemeras()
         buzos = menus.MenuBuzos()
         camperas = menus.MenuCamperas()
@@ -84,87 +115,43 @@ class Productos:
         camisas = menus.MenuCamisas()
         trajes = menus.MenuTrajes()
 
-        self.setOpcion(self.opcion)
-        self.setCompraProductosB(self.compraProductosB)
-        self.setCompraProductosC(self.compraProductosC)
-        self.setCompraProductosCa(self.compraProductosCa)
-        self.setCompraProductosJ(self.compraProductosJ)
-        self.setCompraProductosP(self.compraProductosP)
-        self.setCompraProductosR(self.compraProductosR)
-        self.setCompraProductosTra(self.compraProductosTra)
-        self.setCompraTotal(self.compraTotal)
-        self.setSalir(self.salir)
+        if self.opcion == 1:
+            remeras.menuRemeras(self.compra_total, self.compra_productos_r)
+        elif self.opcion == 2:
+            buzos.menuBuzos(self.compra_total, self.compra_productos_b)
+        elif self.opcion == 3:
+            camperas.menuCamperas(self.compra_total, self.compra_productos_c)
+        elif self.opcion == 4:
+            jeans.menuJeans(self.compra_total, self.compra_productos_j)
+        elif self.opcion == 5:
+            pantalones.menuPantalones(self.compra_total, self.compra_productos_p)
+        elif self.opcion == 6:
+            camisas.menuCamisas(self.compra_total, self.compra_productos_ca)
+        elif self.opcion == 7:
+            trajes.menuTrajes(self.compra_total, self.compra_productos_tra)
 
-        while True:
-            print(
-                ".......................................................................................................................")
-            print(
-                "::                                                         CATEGORIAS                                                ::")
-            print(
-                "::                                             COLECCION OTONIO - INVIERNO 2022                                        ::")
-            print(
-                "::...................................................................................................................::\n")
+    def menu_carrito(self):
+        print("::....................................................................................................................................................::")
+        print("::                                                          :: CARRITO DE COMPRAS ::                                                                   ::")
+        print("::....................................................................................................................................................::\n")
+        print("Los productos y menus agregados al carrito son: ")
+        if remeras.getNombreModelo() != None:
+            print(remeras.getNombreModelo())
+        if buzos.getNombreModelo() != None:
+            print(buzos.getNombreModelo())
+        if pantalones.getNombreModelo() != None:
+            print(pantalones.getNombreModelo())
+        if camisas.getNombreModelo() != None:
+            print(camisas.getNombreModelo())
+        if camperas.getNombreModelo() != None:
+            print(camperas.getNombreModelo())
+        if trajes.getNombreModelo() != None:
+            print(trajes.getNombreModelo())
+            compra_total = (remeras.getCompra() + buzos.getCompra() + pantalones.getCompra() + camisas.getCompra() + camperas.getCompra() + trajes.getCompra())
+            print("El monto total es: " + str(compra_total))
+            pago = MetodoPago()
+            pago.metodoPago(compra_total)
+        elif opcion == 9:
+            self.salir = True
+            break
 
-            print("1.Remeras")
-            print("2.Buzos")
-            print("3.Camperas")
-            print("4.Jeans")
-            print("5.Pantalones Joggin")
-            print("6.Camisas")
-            print("7.Trajes")
-            print("8.Ver carrito de compras")
-            print("9.Salir de la cuenta\n")
-
-            opcion = int(input("Ingresa la categoria ingresada: "))
-
-            if opcion == 1:
-                remeras.menuRemeras(self.compraTotal, self.compraProductosR)
-            elif opcion == 2:
-                buzos.menuBuzos(self.compraTotal, self.compraProductosB)
-            elif opcion == 3:
-                camperas.menuCamperas(self.compraTotal, self.compraProductosC)
-            elif opcion == 4:
-                jeans.menuJeans(self.compraTotal, self.compraProductosJ)
-            elif opcion == 5:
-                pantalones.menuPantalones(self.compraTotal, self.compraProductosP)
-            elif opcion == 6:
-                camisas.menuCamisas(self.compraTotal, self.compraProductosCa)
-            elif opcion == 7:
-                trajes.menuTrajes(self.compraTotal, self.compraProductosTra)
-            elif opcion == 8:
-                print(
-                    "::....................................................................................................................................................::")
-                print(
-                    "::                                                          :: CARRITO DE COMPRAS ::                                                                   ::")
-                print(
-                    "::....................................................................................................................................................::\n")
-                print("Los productosymenus agregados al carrito son: ")
-                if remeras.getNombreModelo() != None:
-                    print(remeras.getNombreModelo())
-                if buzos.getNombreModelo() != None:
-                    print(buzos.getNombreModelo())
-                if pantalones.getNombreModelo() != None:
-                    print(pantalones.getNombreModelo())
-                if camisas.getNombreModelo() != None:
-                    print(camisas.getNombreModelo())
-                if camperas.getNombreModelo() != None:
-                    print(camperas.getNombreModelo())
-                if trajes.getNombreModelo() != None:
-                    print(trajes.getNombreModelo())
-                if jeans.getNombreModelo() != None:
-                    print(jeans.getNombreModelo())
-                compraTotal = (
-                        remeras.getCompra()
-                        + buzos.getCompra()
-                        + pantalones.getCompra()
-                        + camisas.getCompra()
-                        + camperas.getCompra()
-                        + trajes.getCompra()
-                        + jeans.getCompra()
-                )
-                print("El monto total es: " + str(compraTotal))
-                pago = MetodoPago()
-                pago.metodoPago(compraTotal)
-            elif opcion == 9:
-                self.salir = True
-                break

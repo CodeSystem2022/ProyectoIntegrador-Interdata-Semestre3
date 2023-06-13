@@ -1,9 +1,7 @@
 # inicio tienda
 
-from tienda.productos import Productos
-from tienda.menus import *
-from pago.metodopago import *
-
+from productos.tienda import *
+from menus.tienda import *
 class InicioTienda:
     def __init__(self):
         self.eleccionInicio = 0
