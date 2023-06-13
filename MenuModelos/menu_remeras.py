@@ -1,4 +1,5 @@
 import time
+from tienda.productos import Productos
 
 def menu_remeras(CompraTotal, CompraProductos):
     modelo = 0
