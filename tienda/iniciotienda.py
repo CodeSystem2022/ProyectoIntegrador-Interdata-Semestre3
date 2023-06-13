@@ -1,4 +1,9 @@
-# inicio tienda 
+# inicio tienda
+
+from tienda.productos import Productos
+from tienda.menus import *
+from pago.metodopago import *
+
 class InicioTienda:
     def __init__(self):
         self.eleccionInicio = 0
@@ -69,12 +74,16 @@ class InicioTienda:
         self.setSalir(salir)
 
         llamada = Productos()
-        
+
         while self.opcion != 3:
-            print("..................................................................................................................")
-            print("::                                                   INTERDATA                                                  ::")
-            print("::                                        TIENDA MAYORISTA DE ROPA PARA HOMBRE                                  ::")
-            print("::..............................................................................................................::")
+            print(
+                "..................................................................................................................")
+            print(
+                "::                                                   INTERDATA                                                  ::")
+            print(
+                "::                                        TIENDA MAYORISTA DE ROPA PARA HOMBRE                                  ::")
+            print(
+                "::..............................................................................................................::")
             print(" ")
             print(" Somos una tienda mayorista vendemos por curva de 5 unidades, talles y colores sin eleccion")
             print(" ")
@@ -88,12 +97,15 @@ class InicioTienda:
             clave = "1234"
 
             if opcion == 1:
-                print(".........................................................................................................")
-                print("::                                            MI CUENTA                                                ::")
-                print("::.....................................................................................................::")
+                print(
+                    ".........................................................................................................")
+                print(
+                    "::                                            MI CUENTA                                                ::")
+                print(
+                    "::.....................................................................................................::")
                 usuario1 = input("\nUSUARIO: ")
                 clave1 = input("CONTRASEÑA: ")
-                
+
                 if usuario == usuario1 and clave == clave1:
                     print("Redireccionando ....")
                     llamada.productos()
@@ -101,16 +113,19 @@ class InicioTienda:
                     print("Los datos ingresados son incorrectos")
                     print("\nPor favor inténtelo nuevamente")
                     self.inicioTienda()
-            
+
             elif opcion == 2:
-                print(".........................................................................................................")
-                print("::                                 CREANDO USUARIO EN TIENDA INTERDATA                                 ::")
-                print("::.....................................................................................................::")
+                print(
+                    ".........................................................................................................")
+                print(
+                    "::                                 CREANDO USUARIO EN TIENDA INTERDATA                                 ::")
+                print(
+                    "::.....................................................................................................::")
                 print("\nIngrese los datos requeridos")
                 usuario1 = input("\nNombre de usuario: ")
                 clave1 = input("Contraseña: ")
                 clave2 = input("Repita la contraseña: ")
-                
+
                 if clave1 == clave2:
                     print("")
                     print("¡Su cuenta fue creada con éxito!")
@@ -121,13 +136,12 @@ class InicioTienda:
                     print("\nLas contraseñas ingresadas no coinciden")
                     print("Por favor inténtelo nuevamente")
                     self.inicioTienda()
-            
+
             elif opcion == 3:
                 print("Saliendo de la página...")
                 print("¡Gracias por visitarnos!")
                 break
-            
+
             else:
                 print("La opción ingresada es incorrecta")
                 print("\nPor favor inténtelo nuevamente..")
-
