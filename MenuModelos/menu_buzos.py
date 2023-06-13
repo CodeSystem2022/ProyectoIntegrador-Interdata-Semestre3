@@ -1,5 +1,5 @@
 import time
-
+from tienda.productos import Productos
 
 def menu_buzos(CompraTotal, CompraProductos):
     modelo = 0
