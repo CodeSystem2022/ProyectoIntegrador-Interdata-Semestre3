@@ -32,7 +32,7 @@ En la sección Productos podemos encontrar:
 6. Camisas;
 7. Trajes;
 8. Ver carrito de compras;
-9.Salir de la cuenta;
+9. Salir de la cuenta;
 
 Cada opción al seleccionarla despliega sus diferentes modelos para cada categoria, los cuales podemos ir agregando al carrito.
 
