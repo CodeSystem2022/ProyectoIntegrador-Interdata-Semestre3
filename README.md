@@ -16,8 +16,8 @@
 ### Paso 1 
 Al ejecutar el programa nos dirige al InicioTienda. El cual nos ofrece 3 opciones:
 
-1. Iniciar sesión con su cuenta;
-2. Registrar nuevo usuario;
+1. Iniciar sesión con su cuenta;   # Se verificara si la cuenta se encuentra en la base de datos
+2. Registrar nuevo usuario;        # Se Agregara un usuario y contraseña a la base de datos
 3. Salir de la página;
 
 Las dos primeras opciones nos lleva a la sección Productos mientras que la última finaliza la ejecución del programa.
@@ -34,9 +34,27 @@ En la sección Productos podemos encontrar:
 8. Ver carrito de compras;
 9. Salir de la cuenta;
 
-Cada opción al seleccionarla despliega sus diferentes modelos para cada categoria, los cuales podemos ir agregando al carrito.
+Cada opción al seleccionarla despliega sus diferentes modelos para cada categoria, los cuales podemos ir agregando al carrito. Todas estas categorias funcionan con un mismo metodo que muestra al usuario una N cantidad de productos y le permite seleccionar el que desea. El metodo toma el nombre y precio de los productos de una base de datos, de esta forma no hace falta modificar el codigo para agregar nuevos items, sino solo agregarlos a la base de datos. 
 
 ### Paso 3
+El programa nos pregunta si queremos añadir el producto al carrito. En el que caso de que si esta operacion se guarda en la base de datos para que luego el usuario pueda visualizar los productos que agrego tanto como su precio y cantidad.
+
+..................................................................................................
+::                                         CARRITO                                              ::
+..................................................................................................
+
+En carrito:
+|--- Puma X2 = $2400
+|--- Nike X1 = $1900 
+
+Total de compra $: 4300
+
+..................................................................................................
+
+1.Ir a pagar
+2.Volver atras
+
+### Paso 4
 Una vez que tenemos los productos que deseamos comprar añadidos al carrito de compras, podemos proceder al pago.
 Para el pago la tienda ofrece diferentes métodos:
 
@@ -46,5 +64,5 @@ Para el pago la tienda ofrece diferentes métodos:
 4. Mercado Pago;
 5. Volver atrás;
 
-### Paso 4
-Dependiendo del método de pago elegido son los datos que nos solicitará al igual que el descuento o recargo que obtendremos, una vez que hemos terminado de comprar, podemos salir para así finalizar la ejecución del programa.
+### Paso 5
+Dependiendo del método de pago elegido son los datos que nos solicitará al igual que el descuento o recargo que obtendremos, una vez que hemos terminado de comprar podemos salir para así finalizar la ejecución del programa, o seguir comprando. Al finalizar al compra se guarda en la base de datos el monto, el metodo de pago y la fecha y hora de la compra.
