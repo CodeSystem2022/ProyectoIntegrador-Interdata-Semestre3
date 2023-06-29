@@ -65,4 +65,7 @@ Para el pago la tienda ofrece diferentes métodos:
 5. Volver atrás;
 
 ### Paso 5
-Dependiendo del método de pago elegido son los datos que nos solicitará al igual que el descuento o recargo que obtendremos, una vez que hemos terminado de comprar podemos salir para así finalizar la ejecución del programa, o seguir comprando. Al finalizar al compra se guarda en la base de datos el monto, el metodo de pago y la fecha y hora de la compra.
+Dependiendo del método de pago elegido son los datos que nos solicitará al igual que el descuento o recargo que obtendremos.
+
+### Paso 6
+una vez que hemos terminado de comprar podemos salir para así finalizar la ejecución del programa, o seguir comprando. Al finalizar al compra se guarda en la base de datos el monto, el metodo de pago y la fecha y hora de la compra.
