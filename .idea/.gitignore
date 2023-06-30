@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+# PostgreSQL
+*.sql
+*.sql.gz
+*.bak
+*.dump
+/data/
